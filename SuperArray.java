@@ -15,12 +15,15 @@ public class SuperArray{
   }
 
   public boolean add(String element){
+    data = new String[data.length+1];
     data[data.length-1] = element;
-    return(data[data.length-1] == element);
+    return (data[data.length-1] == element);
   }
 
   public String get(int index){
     return data[index];
   }
+
+
 
 }
