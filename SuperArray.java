@@ -11,8 +11,7 @@ public class SuperArray{
     for (int i = 0; i < data.length; i ++)
         if (data[i] != null)
         counter ++;
-    size = counter;
-    return size;
+    return counter;
   }
 
   public int dataLength(){
@@ -20,9 +19,18 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    data = new String[data.length+1];
-    data[data.length-1] = element;
-    return (data[data.length-1] == element);
+    if(size<=data.length-1){
+    data[size] = element;
+    size++;
+    }
+    else{
+      resize();
+      data[size] = element;
+      size++;
+    }
+
+    return (data[size-1] == element);
+
   }
 
   public String get(int index){
