@@ -5,6 +5,7 @@ public class Tester{
     System.out.println(Rifath.size());
     System.out.println(Rifath.add("kutha"));
     System.out.println(Rifath.size());
+    System.out.println(Rifath.get(9));
 
   }
 }

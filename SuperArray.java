@@ -19,4 +19,8 @@ public class SuperArray{
     return(data[data.length-1] == element);
   }
 
+  public String get(int index){
+    return data[index];
+  }
+
 }
