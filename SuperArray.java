@@ -11,7 +11,12 @@ public class SuperArray{
     for (int i = 0; i < data.length; i ++)
         if (data[i] != null)
         counter ++;
-    return counter;
+    size = counter;
+    return size;
+  }
+
+  public int dataLength(){
+    return data.length;
   }
 
   public boolean add(String element){
@@ -27,6 +32,14 @@ public class SuperArray{
   public String set(int index, String element){
     data[index] = element;
     return data[index];
+  }
+
+  private void resize(){ // resizes by 10
+    String[] newArray = new String[data.length+10];
+    for(int i = 0; i<data.length; i++){
+      newArray[i] = data[i];
+    }
+    data = newArray;
   }
 
 }
