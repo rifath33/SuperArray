@@ -1,6 +1,6 @@
 public class SuperArray{
   private String[] data;               // this is a field
-  private int size; //The current size  // this is a field
+  private int size; // NEXT AVALIBLE SLOT!!!!!!
 
   public SuperArray(){
     data = new String[10];
@@ -56,7 +56,7 @@ public class SuperArray{
 
   public void clear(){
     size = 0;
-    data = new String[10];
+    data = new String[10]; // loop and set everything into null
   }
 
   public String toString(){
