@@ -50,4 +50,28 @@ public class SuperArray{
     data = newArray;
   }
 
+  public boolean isEmpty(){
+    return (size()==0);
+  }
+
+  public void clear(){
+    size = 0;
+    data = new String[10];
+  }
+
+  public String toString(){
+    String result = "";
+    return result;
+    // working on it
+  }
+
+  public boolean contains(String s){
+    int counter = 0;
+    for(int i = 0; i < data.length; i++){
+      if(data[i].equals(s))
+      counter++;
+    }
+    return(counter>0);
+  }
+
 }
