@@ -1,17 +1,22 @@
 public class SuperArray{
-  private String[] data;               // this is a field
+  public String[] data;               // this is a field
   private int size; // NEXT AVALIBLE SLOT!!!!!!
 
   public SuperArray(){
     data = new String[10];
   }
 
+  public void updateSize(){
+    int nonNullIndexCounter = 0;
+    for (int i = 0;(data[i] != null); i ++){
+        nonNullIndexCounter ++;
+      }
+    size = nonNullIndexCounter;
+  }
+
   public int size(){
-    int counter = 0;
-    for (int i = 0; i < data.length; i ++)
-        if (data[i] != null)
-        counter ++;
-    return counter;
+    updateSize();
+    return size;
   }
 
   public int dataLength(){
@@ -19,59 +24,27 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    if(size<=data.length-1){
     data[size] = element;
-    size++;
-    }
-    else{
-      resize();
-      data[size] = element;
-      size++;
-    }
-
-    return (data[size-1] == element);
-
+    updateSize();
+    return(data[size-1] == element);
   }
 
-  public String get(int index){
+  public String get(int index){ // index is within 0–(size-1)
     return data[index];
   }
 
-  public String set(int index, String element){
+  // only for replacing old values!
+  public String set(int index, String element){ // index is within 0–(size-1)
     data[index] = element;
     return data[index];
   }
 
   private void resize(){ // resizes by 10
-    String[] newArray = new String[data.length+10];
+    String[] newArray = new String[data.length * data.length];
     for(int i = 0; i<data.length; i++){
       newArray[i] = data[i];
     }
     data = newArray;
-  }
-
-  public boolean isEmpty(){
-    return (size()==0);
-  }
-
-  public void clear(){
-    size = 0;
-    data = new String[10]; // loop and set everything into null
-  }
-
-  public String toString(){
-    String result = "";
-    return result;
-    // working on it
-  }
-
-  public boolean contains(String s){
-    int counter = 0;
-    for(int i = 0; i < data.length; i++){
-      if(data[i].equals(s))
-      counter++;
-    }
-    return(counter>0);
   }
 
 }
