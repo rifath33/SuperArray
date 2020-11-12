@@ -98,6 +98,7 @@ public class SuperArray{
         data[i] = data[i-1]; // shift it all to the right!
       }
       data[index] = element; // and put element where you want it
+      updateSize();
       }
 
     }
@@ -105,6 +106,29 @@ public class SuperArray{
       data[index] = element;
     }
 
+  }
+
+  public String remove(int index){
+    updateSize();
+    String memory = data[index];
+    if(index == size-1){
+    data[index] = null;
+    for(int i = index; i+1<size; i++){
+      data[i] = data[i+1];
+    }
+    }
+    else{
+      if(index < size-1){
+        data[index] = null;
+        for(int i = index; i+1<size+1; i++){
+        data[i] = data[i+1];
+      }
+      data[size] = null;
+      updateSize();
+    }
+    }
+    updateSize();
+    return memory;
   }
 
 }

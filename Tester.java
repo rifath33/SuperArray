@@ -10,9 +10,21 @@ public class Tester{
     words.add("am");
     words.add("Rifath");
     words.add("Hossain");
-    words.add("Kutha");
+    words.add("the greatest");
     System.out.println(words.toString());
     System.out.println(Arrays.toString(words.data));
+
+    System.out.println(words.remove(2));
+    System.out.println(words.toString());
+    System.out.println(Arrays.toString(words.data));
+
+    System.out.println(words.remove(3));
+    System.out.println(words.toString());
+    System.out.println(Arrays.toString(words.data));
+
+    // System.out.println(words.remove(1));
+    // System.out.println(words.toString());
+    // System.out.println(Arrays.toString(words.data));
 
     // MAKE data PRIVATE when you're done!!!!!
 
