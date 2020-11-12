@@ -11,14 +11,16 @@ public class Tester{
     words.add("Rifath");
     words.add("Hossain");
     words.add("the greatest");
+    words.add("there ever");
+    words.add("was");
     System.out.println(words.toString());
     System.out.println(Arrays.toString(words.data));
+    System.out.println(
+    (Arrays.toString(
+    words.toArray()
+    ))
+    );
 
-    System.out.println(words.indexOf(" greatest"));
-
-    // System.out.println(words.remove(1));
-    // System.out.println(words.toString());
-    // System.out.println(Arrays.toString(words.data));
 
     // MAKE data PRIVATE when you're done!!!!!
 
