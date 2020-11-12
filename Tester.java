@@ -26,5 +26,8 @@ public class Tester{
 
     System.out.println("_____________________________________________________");
 
+    SuperArray kutha = new SuperArray(7);
+    System.out.println(kutha.toString());
+    System.out.println(Arrays.toString(kutha.data));
   }
 }

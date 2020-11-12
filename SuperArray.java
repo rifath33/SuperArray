@@ -88,6 +88,10 @@ public class SuperArray{
     return(counter > 0);
   }
 
+  public SuperArray(int initialCapacity){
+    data = new String[initialCapacity];
+  }
+
   public void add(int index, String element){
     updateSize();
 
@@ -153,6 +157,5 @@ public class SuperArray{
       }
       return result;
     }
-
 
 }
