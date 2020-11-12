@@ -140,6 +140,8 @@ public class SuperArray{
       if(data[i].equals(s))
       isPresent = 1;
     }
+    if(isPresent == 0)
+    indexCounter = -1;
     return indexCounter;
     }
 

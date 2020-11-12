@@ -14,7 +14,7 @@ public class Tester{
     System.out.println(words.toString());
     System.out.println(Arrays.toString(words.data));
 
-    System.out.println(words.indexOf("hossain"));
+    System.out.println(words.indexOf(" greatest"));
 
     // System.out.println(words.remove(1));
     // System.out.println(words.toString());
