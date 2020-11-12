@@ -20,9 +20,9 @@ public class Tester{
     words.toArray()
     ))
     );
-
-    System.out.println(words.set(-1, "kutha"));
-    System.out.println(words.toString());
+    System.out.println(words.size());
+    words.remove(6);
+        System.out.println(words.toString());
     // MAKE data PRIVATE when you're done!!!!!
 
     System.out.println("_____________________________________________________");

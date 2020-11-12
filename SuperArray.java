@@ -110,6 +110,10 @@ public class SuperArray{
   public void add(int index, String element){
     updateSize();
 
+    if(index < 0 || index > size()){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of range");
+    }
+
     if(data[index] != null){ // if there's text there...
 
       if(index <= size-1){
@@ -129,6 +133,11 @@ public class SuperArray{
 
   public String remove(int index){
     updateSize();
+
+    if(index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of range");
+    }
+
     String memory = data[index];
     if(index == size-1){
     data[index] = null;
