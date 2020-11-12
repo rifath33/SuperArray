@@ -131,4 +131,17 @@ public class SuperArray{
     return memory;
   }
 
+  public int indexOf(String s){
+    updateSize();
+    int indexCounter = -1;
+    int isPresent = 0;
+    for(int i = 0;( (i < size) && (isPresent != 1) ); i++){
+      indexCounter++;
+      if(data[i].equals(s))
+      isPresent = 1;
+    }
+    return indexCounter;
+    }
+
+
 }
