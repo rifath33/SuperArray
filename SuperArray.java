@@ -66,6 +66,8 @@ public class SuperArray{
   }
 
   public String toString(){
+    updateSize();
+
     String result = "[";
     for(int i = 0; i < size; i++){
       if(i < size-1)
@@ -84,6 +86,25 @@ public class SuperArray{
       counter++;
     }
     return(counter > 0);
+  }
+
+  public void add(int index, String element){
+    updateSize();
+
+    if(data[index] != null){ // if there's text there...
+
+      if(index <= size-1){
+      for(int i = size; i>index-1; i--){
+        data[i] = data[i-1]; // shift it all to the right!
+      }
+      data[index] = element; // and put element where you want it
+      }
+
+    }
+    else{ // if there is no text there...
+      data[index] = element;
+    }
+
   }
 
 }
