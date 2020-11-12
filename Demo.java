@@ -9,21 +9,25 @@ public class Demo{
     for(int i = 0; i < clone.length; i++){
       for(int f = clone.length-1; f>i; f--){
         if((clone[f]).equals(clone[i]))
-        s.data[f] = "duplicate";
+        clone[f] = "duplicate";
       }
       //clone = s.toArray()
     }
 
     for(int i = clone.length-1; i > 0; i--){
-      if(s.data[i].equals("duplicate"))
+      if(clone[i].equals("duplicate"))
       s.remove(i);
     }
 
   }
 
-// [kani, uni, ebi, una, una, ebi, kani, una, una, ebi, toro]
-// [kani, uni, ebi, una, una, ebi, una, una, ebi, toro]
-// [kani, uni, ebi, una, una, ebi, una, una, ebi, toro]
+  // public static SuperArray findOverlap(SuperArray a, SuperArray b){
+  //
+  // }
+  //
+  // public int lastIndexOf(String s){
+  //   for(int i = s.data)
+  // }
 
 
   public static void main(String[]args){
