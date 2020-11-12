@@ -21,13 +21,12 @@ public class Tester{
     ))
     );
 
+    System.out.println(words.get(-1));
 
     // MAKE data PRIVATE when you're done!!!!!
 
     System.out.println("_____________________________________________________");
 
-    SuperArray kutha = new SuperArray(-1);
-    System.out.println(kutha.toString());
-    System.out.println(Arrays.toString(kutha.data));
+
   }
 }

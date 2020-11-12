@@ -36,6 +36,11 @@ public class SuperArray{
   }
 
   public String get(int index){ // index is within 0–(size-1)
+    updateSize();
+    if(index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of range");
+    }
+
     return data[index];
   }
 
