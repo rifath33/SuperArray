@@ -6,16 +6,17 @@ public class SuperArray{
     data = new String[10];
   }
 
-  public void updateSize(){
+  public void sizeUpdater(){
     int nonNullIndexCounter = 0;
-    for (int i = 0;(data[i] != null); i ++){
+    for (int i = 0; i < data.length; i ++){
+        if(data[i]!=null)
         nonNullIndexCounter ++;
       }
-    size = nonNullIndexCounter;
+    size=nonNullIndexCounter;
   }
 
   public int size(){
-    updateSize();
+    sizeUpdater();
     return size;
   }
 
@@ -24,9 +25,12 @@ public class SuperArray{
   }
 
   public boolean add(String element){
-    data[size] = element;
-    updateSize();
-    return(data[size-1] == element);
+    if(size == data.length){
+      resize();
+      add(element);
+    }
+    else data[size] = element;
+    return(data[size] == element);
   }
 
   public String get(int index){ // index is within 0–(size-1)
@@ -39,12 +43,14 @@ public class SuperArray{
     return data[index];
   }
 
-  private void resize(){ // resizes by 10
+  private void resize(){
     String[] newArray = new String[data.length * data.length];
     for(int i = 0; i<data.length; i++){
       newArray[i] = data[i];
     }
     data = newArray;
   }
+
+
 
 }
