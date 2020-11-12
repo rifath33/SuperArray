@@ -21,8 +21,8 @@ public class Tester{
     ))
     );
 
-    System.out.println(words.get(-1));
-
+    System.out.println(words.set(-1, "kutha"));
+    System.out.println(words.toString());
     // MAKE data PRIVATE when you're done!!!!!
 
     System.out.println("_____________________________________________________");

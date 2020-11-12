@@ -46,6 +46,10 @@ public class SuperArray{
 
   // only for replacing old values!
   public String set(int index, String element){ // index is within 0–(size-1)
+    if(index < 0 || index >= size()){
+      throw new IndexOutOfBoundsException("Index " + index + " is out of range");
+    }
+
     data[index] = element;
     return data[index];
   }
