@@ -89,7 +89,13 @@ public class SuperArray{
   }
 
   public SuperArray(int initialCapacity){
+    if(initialCapacity < 0){
+    throw new IllegalArgumentException("InitialCapacity " + initialCapacity
+    + " cannot be negative");
+    }
+
     data = new String[initialCapacity];
+
   }
 
   public void add(int index, String element){
