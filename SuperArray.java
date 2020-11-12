@@ -1,5 +1,5 @@
 public class SuperArray{
-  public String[] data;               // this is a field
+  private String[] data;               // this is a field
   private int size; // NEXT AVALIBLE SLOT!!!!!!
 
   public SuperArray(){
@@ -181,5 +181,7 @@ public class SuperArray{
       }
       return result;
     }
+
+
 
 }
