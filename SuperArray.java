@@ -196,4 +196,10 @@ public class SuperArray{
       return indexCounter;
     }
 
+    public boolean equals(SuperArray other){
+      String workingString = toString();
+    return( workingString.equals(other.toString()) ) ;
+
+    }
+
 }
