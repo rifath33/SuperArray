@@ -182,6 +182,18 @@ public class SuperArray{
       return result;
     }
 
-
+    public int lastIndexOf(String value){
+      updateSize();
+      int indexCounter = -1;
+      int isPresent = 0;
+      for(int i = size-1;( (i > -1) && (isPresent != 1) ); i--){
+        indexCounter=i;
+        if(data[i].equals(value))
+        isPresent = 1;
+      }
+      if(isPresent == 0)
+      indexCounter = -1;
+      return indexCounter;
+    }
 
 }
