@@ -55,11 +55,23 @@ public class SuperArray{
   }
 
   private void resize(){
-    String[] newArray = new String[data.length * data.length];
-    for(int i = 0; i<data.length; i++){
-      newArray[i] = data[i];
+    updateSize();
+    if(data.length>0){
+      String[] newArray = new String[data.length * data.length];
+      for(int i = 0; i<data.length; i++){
+        newArray[i] = data[i];
+      }
+      data = newArray;
     }
-    data = newArray;
+    else{
+      String[] newArray = new String[10];
+      for(int i = 0; i<data.length; i++){
+        newArray[i] = data[i];
+      }
+      data = newArray;
+    }
+
+
   }
 
   public void clear(){
