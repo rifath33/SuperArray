@@ -28,7 +28,7 @@ public class SuperArray{
     updateSize();
     if(size == data.length){
       resize();
-      add(element);
+      data[size]=(element);
     }
     else data[size] = element;
     updateSize();
