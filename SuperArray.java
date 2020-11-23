@@ -126,19 +126,11 @@ public class SuperArray{
       throw new IndexOutOfBoundsException("Index " + index + " is out of range");
     }
 
-    if(data[index] != null){ // if there's text there...
-
-      if(index <= size-1){
-      for(int i = size; i>index-1; i--){
-        data[i] = data[i-1]; // shift it all to the right!
+    if(index <= size()-1){
+      for(int i = size(); i-1 >= index; i--){
+        data[i]=data[i-1];
       }
-      data[index] = element; // and put element where you want it
-      updateSize();
-      }
-
-    }
-    else{ // if there is no text there...
-      data[index] = element;
+      data[index]=element;
     }
 
   }
