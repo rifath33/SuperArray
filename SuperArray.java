@@ -60,4 +60,9 @@ public class SuperArray{
     }
   }
 
+  public boolean isEmpty(){
+    size();
+    return(size==0);
+  }
+
 }
