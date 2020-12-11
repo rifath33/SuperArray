@@ -61,8 +61,7 @@ public class SuperArray{
   }
 
   public boolean isEmpty(){
-    size();
-    return(size==0);
+    return(size()==0);
   }
 
   public String toString(){
@@ -72,7 +71,7 @@ public class SuperArray{
       result = result + data[i] + ", ";
       else result = result + data[i];
     }
-    return result;
+    return result + "]";
   }
 
   public boolean contains(String s){
