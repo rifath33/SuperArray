@@ -65,4 +65,14 @@ public class SuperArray{
     return(size==0);
   }
 
+  public String toString(){
+    String result = "[";
+    for(int i = 0; i < size(); i++){
+      if(i < size()-1)
+      result = result + data[i] + ", ";
+      else result = result + data[i];
+    }
+    return result;
+  }
+
 }
