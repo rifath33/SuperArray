@@ -75,4 +75,13 @@ public class SuperArray{
     return result;
   }
 
+  public boolean contains(String s){
+    int counter = 0;
+    for(int i = 0; i < size(); i++){
+      if( data[i].equals(s) )
+      counter++;
+    }
+    return(counter>0);
+  }
+
 }
