@@ -32,9 +32,24 @@ public class SuperArray{
     return(data[size()-1]==element);
   }
 
-  // public boolean add(int index, String element){
-  //
-  // }
+  public boolean add(int index, String element){
+    if(index == size())
+    add(element);
+    else{
+      if(index < size() && size()>0){ // atleast 1 char in string
+        //use set method
+        add(get(size()-1)); //add last element again
+        for(int i = size()-1; i > index; i--){
+          set(i, get(i-1));
+        }
+        set(index, element);
+    }
+
+    }
+
+    return(data[index]==element);
+
+  }
 
   public String get(int index){
     return data[index];
