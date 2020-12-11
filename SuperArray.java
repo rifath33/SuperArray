@@ -7,6 +7,11 @@ public class SuperArray{
     size = 0;
   }
 
+  public SuperArray(int initialCapacity){
+    data = new String[initialCapacity];
+    size = 0;
+  }
+
   //depends on workign size
   public int size(){
     int counter = 0;
@@ -25,8 +30,11 @@ public class SuperArray{
 
     data[size()] = element;
     return(data[size()-1]==element);
-
   }
+
+  // public boolean add(int index, String element){
+  //
+  // }
 
   public String get(int index){
     return data[index];
@@ -44,6 +52,12 @@ public class SuperArray{
       newArray[i] = data[i];
     }
     data = newArray;
+  }
+
+  public void clear(){
+    for(int i = 0; i < size(); i++){
+      data[i]=null;
+    }
   }
 
 }
