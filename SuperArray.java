@@ -77,7 +77,7 @@ public class SuperArray{
   }
 
   private void resize(){
-    String[] newArray = new String[size()*size()];
+    String[] newArray = new String[size()+10];
     for(int i = 0; i < data.length; i++){
       newArray[i] = data[i];
     }
@@ -120,7 +120,11 @@ public class SuperArray{
       }
     }
     return -1;
+  }
 
+  public String[] toArray(){
+    String[] result = data;
+    return result;
   }
 
 }
