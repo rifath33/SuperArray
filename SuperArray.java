@@ -36,6 +36,9 @@ public class SuperArray{
   }
 
   public boolean add(int index, String element){
+    if (index < 0 || index > size())
+    throw new IndexOutOfBoundsException("Index " + index + " is out of range.");
+
     if(index == size())
     add(element);
     else{
@@ -76,6 +79,8 @@ public class SuperArray{
   }
 
   public String set(int index, String element){
+    if(index < 0 || index >= size())
+    throw new IndexOutOfBoundsException("Index " + index + " is out of range.");
     String memory = data[index];
     data[index] = element;
     return memory;
