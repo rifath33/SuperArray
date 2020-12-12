@@ -78,6 +78,7 @@ public class SuperArray{
   public void clear(){
     String[] newData = new String[size()];
     data = newData;
+    size=0;
   }
 
   public boolean isEmpty(){
