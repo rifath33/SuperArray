@@ -58,6 +58,10 @@ public class SuperArray{
   }
 
   public String remove(int index){
+
+    if(index < 0 || index >= size())
+    throw new IndexOutOfBoundsException("Index " + index + " is out of range.");
+    
     String memory = get(index);
     int sizeMemory = size();
 
