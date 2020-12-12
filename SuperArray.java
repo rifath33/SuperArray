@@ -61,19 +61,12 @@ public class SuperArray{
 
     if(index < 0 || index >= size())
     throw new IndexOutOfBoundsException("Index " + index + " is out of range.");
-    
     String memory = get(index);
-    int sizeMemory = size();
-
-    if(index == size()-1)
-    set(index, null);
-    else{
-      set(index, null);
-      for(int i = index; i < sizeMemory; i++){
-        set(i, get(i+1));
-      }
-    }
-    return memory;
+		for (int i = index; i < size - 1; i++) {
+			data[i] = data[i+1];
+		}
+		size--;
+		return memory;
   }
 
   public String get(int index){
