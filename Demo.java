@@ -17,9 +17,9 @@ public class Demo{
   		for (int i = 0; i < Math.max(a.size(), b.size()); i++) {
   			if (a.size() > i && b.contains(a.get(i)) && !result.contains(a.get(i)))
         result.add(a.get(i));
-  			if (b.size() > i && a.contains(b.get(i)) && !result.contains(b.get(i)))
+        if (b.size() > i && a.contains(b.get(i)) && !result.contains(b.get(i)))
         result.add(b.get(i));
-  		}
+      }
   		return result;
   	}
 
