@@ -12,64 +12,35 @@ public class Demo{
       }
     }
 
-    public static SuperArray findOverlap(SuperArray a, SuperArray b){
-      removeDuplicates(a);
-      removeDuplicates(b);
-
-      String[] aClone = a.toArray();
-      String[] bClone = b.toArray();
-      String[] smaller;
-      String[] other;
-      SuperArray smallerSuper;
-      SuperArray otherSuper;
-
-      int termsInCommon = 0;
-
-      int workingLength;
-
-      if(aClone.length < bClone.length)
-      {smaller = aClone;
-        smallerSuper = a;
-        other=bClone;
-        otherSuper = b;
-      }
-      else if ( bClone.length<aClone.length )
-      {smaller = bClone;
-        smallerSuper = b;
-        other=aClone;
-      otherSuper = a;}
-      else     {smaller = bClone;
-            smallerSuper = b;
-            other=aClone;
-          otherSuper = a;}
-
-      for(int i = 0; i<smaller.length; i++){
-        for(int f = 0; f<other.length; f++){
-          if(smaller[i].equals(other[f]))
-          termsInCommon++;
-        }
-      }
-
-      SuperArray result = new SuperArray(termsInCommon);
-      for(int i = 0; i<smaller.length; i++){
-          if(smallerSuper.contains(otherSuper.get(i)))
-          result.add(otherSuper.get(i));
-      }
-
-      return result;
-
-    }
+  	public static SuperArray findOverlap(SuperArray a, SuperArray b) {
+  		SuperArray result = new SuperArray(Math.min(a.size(), b.size()));
+  		for (int i = 0; i < Math.max(a.size(), b.size()); i++) {
+  			if (a.size() > i && b.contains(a.get(i)) && !result.contains(a.get(i)))
+        result.add(a.get(i));
+  			if (b.size() > i && a.contains(b.get(i)) && !result.contains(b.get(i)))
+        result.add(b.get(i));
+  		}
+  		return result;
+  	}
 
     public static void main(String[]args){
     SuperArray words = new SuperArray();
     //grouped to save vertical space
-    words.add("kani");   words.add("uni");     words.add("ebi");     words.add("una");
-    words.add("una");    words.add("ebi");     words.add("kani");    words.add("una");
-    words.add("una");    words.add("ebi");     words.add("toro");
+    words.add("9");
+    words.add("1");
+    words.add("2");
+    words.add("2");
+    words.add("3");
+    words.add("4");
 
-    System.out.println(words);
-    removeDuplicates(words);
-    System.out.println(words);
+    SuperArray rifath = new SuperArray();
+    rifath.add("0");
+    rifath.add("4");
+    rifath.add("2");
+    rifath.add("2");
+    rifath.add("9");
+
+    System.out.println(findOverlap(rifath,words).toString());
 
     }
 
