@@ -9,8 +9,8 @@ public class SuperArray{
 
   public SuperArray(int initialCapacity){
     if(initialCapacity < 0)
-    throw new IllegalArgumentException("Initial Capacity cannot be negative.")
-    
+    throw new IllegalArgumentException("Initial Capacity cannot be negative.");
+
     data = new String[initialCapacity];
     size = 0;
   }
@@ -70,6 +70,8 @@ public class SuperArray{
   }
 
   public String get(int index){
+    if(index < 0 || index >= size())
+    throw new IndexOutOfBoundsException("Index " + index + " is out of range.");
     return data[index];
   }
 
